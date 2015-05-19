@@ -50,6 +50,8 @@ probaAmbito();
 echo "<br/><br/>";
 
 function varArgs(...$num){
+	echo "O numero de agumentos pasados a funcion é ".func_num_args();
+	echo "<br/>";
 	foreach($num as $numero) echo  $numero."<br/>";
 }
 
