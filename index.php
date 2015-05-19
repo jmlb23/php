@@ -45,3 +45,12 @@ function probaAmbito(){
 }
 
 probaAmbito();
+
+//probas con variable args
+echo "<br/><br/>";
+
+function varArgs(...$num){
+	foreach($num as $numero) echo  $numero."<br/>";
+}
+
+varArgs(3,4,5,6,7);
