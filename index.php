@@ -55,4 +55,26 @@ function varArgs(...$num){
 	foreach($num as $numero) echo  $numero."<br/>";
 }
 
-varArgs(3,4,5,6,7);
+varArgs(3,5,6,7);
+
+//probando traits
+
+trait ProbaTrait{
+	public function Hola(){
+		echo "hola";
+	}
+
+}
+
+class Proba{
+	use ProbaTrait{
+		Hola as holaTrait;
+	}
+	public function Hola(){
+		$this->holaTrait();
+		echo "hola sobreescrito";
+	}
+}
+
+$v = new Proba;
+$v->Hola();
