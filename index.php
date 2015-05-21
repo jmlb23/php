@@ -67,6 +67,9 @@ trait ProbaTrait{
 }
 
 class Proba{
+	//parece ser que a unica forma de usar o metodo dun trait nun metodo sobreescrito é usar un alias a
+	//hora de facer use dentro da mesma clausula
+	//non hai relacion de herencia como tal os metodos teñen implementacion
 	use ProbaTrait{
 		Hola as holaTrait;
 	}
