@@ -16,6 +16,8 @@ echo $v."<br/>";
 
 //pasando por refencia valores a unha funcion
 //indicamos no parametro da funcion e cando damos os argumentos xa non fai falla indicarllo
+//coma en c++ non ten sentido a unha funcion declarada como
+// int h(int* v); pasarlle h(*a) xa que pasamos a referencia e non o contido
 function ref(&$b){
 	$b++;
 }
