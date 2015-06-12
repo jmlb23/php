@@ -156,3 +156,33 @@ var_dump(((0.1+0.7)*10));
 //usar valores absolutos a poder ser
 //o ser represantados en binario para o seu almacenamento é probable que exista unha perda de precision coidado
 //http://floating-point-gui.de/
+limpa();
+//abs devolve o valor absoluto se int en forma integer se é un float en notacion decimal cientifica en forma enteira
+echo abs(1.23456789-1.23456780);
+//para aqueles resultados con operacions con floats que non den un valor numerico pode devolver a operacion un nan not a number
+limpa();
+//exemplo o acos() funcion so admite valores entre un e menos un e se non devolve un nan
+echo acos(5);
+
+
+					////////////////////////////
+					//	Strings php	  //
+					////////////////////////////
+
+
+//en php os string son series de caracteres e cada caracter e o mesmo que un byte
+//php soporta strings de como maximo 256 caracteres
+//a lonxitude maxima de caracteres en php é de 2gb
+
+$string[2] = "2";
+
+echo $string;
+
+limpa();
+
+//devolve o caracter correspondente o integer pasado
+echo chr(101);
+echo "<br/>";
+//devolve o integer que ten como representacion ASCII
+echo ord("e");
+
