@@ -186,3 +186,40 @@ echo "<br/>";
 //devolve o integer que ten como representacion ASCII
 echo ord("e");
 
+
+//probando as referencias
+$a = 5;
+//sen paso por referecia o valor que se asigna seria por copia 
+function ref(&$b){
+	$b = 4;
+
+}
+ref($a);
+
+echo $a;
+
+class Hola{
+	//se casteamos
+	public $a;//non se lle antepon nada
+	private $b;//anteponselle o nome da clase
+	protected $c;//anteponselle un asterisco
+}
+
+echo "<br/>";
+var_dump((array)new Hola());
+
+//podemos castear un array a object e vainos a dar como tipo o obxeto standar StdClass
+echo "<br/>";
+$ar = array(4,'hola'=>6,true=>3);
+echo "<br/>";
+var_dump((object)$ar);
+
+echo "<br/>";
+//tamen podemos castear calquer tipo scalar a obejct
+//os objects quedan intactos e os arrays pasan a ser
+//objects con cada key como atributo e cada value como
+//valor de cada atributo
+
+$val = 5;
+var_dump((object)$val);
+
