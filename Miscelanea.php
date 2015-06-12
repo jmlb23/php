@@ -33,3 +33,126 @@ echo $nowdoc.$heredoc."<br/>";
 //tamen coa coma pero é mala practica
 echo $nowdoc,$heredoc;
 
+#comentario tipo shell ou perl
+/*
+coidado porque os comentarios multiringleira comentan as etiquetas de apertura e de cerre de php
+?>
+
+<?php
+
+echo "hola mundo";
+*/
+echo "proba despois de comentario multiringleira";
+
+//temos 3 conxuntos de tipo en php
+//escalares
+$string = "hola mundo";
+$boolean = true;
+$integer = 5;
+$double = 3.4;
+
+//compostos
+
+$array = array(2,3,4,5); //que poden ser tipo asocitivo ou con indice numerico
+$obxeto = new StdClass(); //son obxetos
+
+//espciais
+$nulo = null;
+$resouce = fopen(".","r");//o que devolve por exemplo unha funcion como fopen que manexa ficheiros
+
+//temos tamen pseudotipos number mixed callback array|object void que se usan nos manuais por motivos de lexivilidade
+
+//en php 5.6 engadese o vardiact ou varargs en java
+//declarase como en java String... args
+//"tipo" varible que os conten
+function x(...$x){
+	foreach($x as $a){
+
+		echo "$a<br/>";
+	}
+}
+x(3,45,5,6);
+
+//bolean so suporta true ou false
+// e para castear podemos usar as palabras chaves bool boolean
+//ter en conta que o casteo pode ser inecesario xa que php se hai unha expresion ou se usan operadores ou unha funcion
+//xa castea implicitamente a boolean 1 true  0 false
+//exemplo
+//seria un false implicito o propio false, unha cadea valeira, unha cadea que conteña so un 0, un integer que conteña so un 0
+//un double que conteña so un 0, un array valeiro, e en php 4 un obxeto sen atributos, e un elemento xml con etiquetas valeiras
+if(1) echo "é casteado o un a un true"."<br/>";
+if([3,4]) echo "é casteado o array non valeiro a un true"."<br/>";
+var_dump((bool)1);
+var_dump((boolean)1);
+
+
+//os integers soportan vlaores enterios de -infinito a +infinito
+//en php 5.4.0 engadiuse a posibilidade de usar literais binarios
+
+//literal hexadecimal o numero vai precedido de 0x
+echo "<br/>";
+echo 0x1ab;
+echo "<br/>";
+//literal binario  o numero vai precedido de 0b
+echo "<br/>";
+echo 0b10101001;
+echo "<br/>";
+//literal octal  o numero vai precedido de 0 se vai un numero non valido en codificacion octal truncase o usase so o numero valido
+echo "<br/>";
+echo 0147;
+echo "<br/>";
+
+//ter en conta que se hai un overflow nun integer pasara a ser un float
+//este seria un overflow en 64 bits OS
+$numero = 92233720368547758070;
+
+var_dump($numero);
+
+
+//ter en conta que o resultado dunha division entre dous integers
+// se non é exacta vai dar un float como resultado
+//para ter a parte enteira do resultado temos que castear
+//ou usar a funcion round que o que fai é redondear o enteiro mais preto
+echo "<br/>";
+var_dump(1/2);
+//para castear a int podemos usar as palabras chaves int ou integer
+var_dump((integer)(1/2));
+var_dump(round(1/2));
+var_dump(round(0.1));
+//coidado con castear o resultado de fraccions xa que pode dar resultados estranos
+//porque? porque usa o sismtema binario
+var_dump((int)((0.1+0.7)*10));
+
+
+///////////////////////
+//	floats	     //
+///////////////////////
+
+
+//podemos usar varias notacions
+$a = 2.456;
+$b = 2.1e3;
+$c = 7E-10;
+//parametros opcionales nunha funcion
+function limpa($b=10){
+	for($a=0;$a<$b;$a++){
+		echo "<br/>";
+	}
+
+}
+
+limpa();
+
+var_dump($a);
+var_dump($b);
+var_dump($c);
+
+//cando necesitemos usar numeros reais (floats) en operacions tal cual son en base 10 pode dar certa perda de precision
+//xa que non teñen represetacion exacta en binario e e o que se usa por detras para almacenar todo
+
+var_dump(((0.1+0.7)*10));
+//nota
+//non comparar nunca dous floats e nunca fiarse do que devolve unha operacion entre floats en php
+//usar valores absolutos a poder ser
+//o ser represantados en binario para o seu almacenamento é probable que exista unha perda de precision coidado
+//http://floating-point-gui.de/
