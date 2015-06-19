@@ -9,27 +9,27 @@
 //clase, podemos usar en php tanto o paradigma da oop ou da programacion
 // estructurada indistintamente
 function x(){
-class Proba{
+	class Proba{
+		
+		private $valor = 5;
 	
-	private $valor = 5;
-
-	public function getValor(){
-		/*
-		* ter en conta que se non usamos a pseudovariable
-		* $this e chamamos o atributo sen o $this precendendo
-		* o ser php un linguaxe con tipado dinamico
-		* vai a entender que declaramos unha nova variable
-		* co mesmo nome 
-		* return $valor; non teria o resultado esperado
-		* é mais da un notice por variable non definida
-		*/
-		//para acceder co $this facemos como para aceder no array GLOBALS non poñemos o dollar
-		return $this->valor;
+		public function getValor(){
+			/*
+			* ter en conta que se non usamos a pseudovariable
+			* $this e chamamos o atributo sen o $this precendendo
+			* o ser php un linguaxe con tipado dinamico
+			* vai a entender que declaramos unha nova variable
+			* co mesmo nome 
+			* return $valor; non teria o resultado esperado
+			* é mais da un notice por variable non definida
+			*/
+			//para acceder co $this facemos como para aceder no array GLOBALS non poñemos o dollar
+			return $this->valor;
+		}
 	}
-}
-
-$clase = new Proba;// o non ter constructor ou ser sin argumentos podemos omitiros parentesis
-echo $clase->getValor();
+	
+	$clase = new Proba;// o non ter constructor ou ser sin argumentos podemos omitiros parentesis
+	echo $clase->getValor();
 }
 
 x();
