@@ -1,4 +1,12 @@
 <?php
+//para poñer nun arquivo varios namespaces teremos que usar as chaves para delimitalo
+namespace espazo{
+	echo "estamos no ".__NAMESPACE__;
+}
+//se temos un namespace delimitado por chaves
+//non pode ir codigo fora del
+//para poñelo no namespace global indicamolo cun namespace sen nome que indica que é o global
+namespace{
 include("namespaces.php");
 //exemplo practico de use e as
 //podemos usar a forma cualified ou full cualified dependedo do ambito
@@ -21,3 +29,4 @@ function x(){
 	//use names as n; ollo ten que estar no ambito global
 }
 
+}

@@ -8,7 +8,7 @@ function exemplo(){
 class proba{
 	const V = "Hola dende ".__CLASS__;
 	public function __construct(){
-		echo "hola dende a clase ".__CLASS__."<br/>";
+		echo "<br/>hola dende a clase ".__CLASS__."<br/>";
 	}
 	public static function estatica(){
 		echo "hola dende a clase ".__METHOD__."<br/>";
@@ -79,5 +79,6 @@ $h = new \StdClass();//chamamos explicitamente a global
 //recordar que so php é casensitive nas variables
 //echo Cons;
 var_dump($h);
-$h = new stdClass(); //intentamos chamar a global con unqualified pero da fatal error porque non o atopa neste scope
+//$h = new stdClass(); //intentamos chamar a global con unqualified pero da fatal error porque non o atopa neste scope
+
 

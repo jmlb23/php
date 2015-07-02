@@ -29,3 +29,12 @@ namespace v{
 	//falla porque intenta cargar unha clase con ese nome neste espazo de nomes
 	$h = new stdClass();
 }
+
+//non podemos crear namespaces anidados
+
+
+namespace h{
+	namespace w{
+		class clas{}
+	}
+}
