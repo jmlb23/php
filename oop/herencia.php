@@ -9,7 +9,7 @@
 //o modelo de obxetos e clases é parecido o de c++
 //non hai unha clase "object" da que todas as clases hernden
 /**
-<a href="http://stackoverflow.com/questions/7909073/why-php-has-no-default-constructor">explicacion do constructor php</a>
+@link http://stackoverflow.com/questions/7909073/why-php-has-no-default-constructor
 */
 class persoa{
 	public function __construct($nome){
