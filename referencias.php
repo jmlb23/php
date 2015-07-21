@@ -215,3 +215,36 @@ w($b);//asignase por referencia o paremetro $e =& $b
 //usar as referencias so se hai unha razon tecnica de peso
 //non melloran o rendemento é mais as referencias de php
 //son mais lentas que a asignacion por copia
+
+//cando facemos unha referencia e intentamos facer un unset
+//pasa o seguinte
+
+echo "<hr/";
+echo "probando as referencias o facer unset";
+echo "<hr/";
+//nunha variable normal facemos un unset (sin castear a unset) e o que fai borrala como se nunca fose definida
+
+$v = 5;
+$v3 = 50;
+$v4 = &$v3;
+unset($v);
+//se facemos un unset da variable a que apunta v4 non se borra esta
+//v3 si esta undefined pero v4 apunta o contido
+//outra vez a metafora de unix e os enlaces con unlink
+//coas referencias recordar que non son punteiros o uso 
+//as variables son meros alias e metres que haxa un que faga referencia o contido
+//da igual que unsetemos v3 xa que o contido sigue existindo e v4 vai apuntar igual o contido de v3 que é independente da existencia deste o haber referencias
+// mentres haxa algo que o referecie
+//coidado!!!!!!
+//como nos hard links necesitamos borrar toda referencia para que se poida eliminar un contido ou obxeto mentres exista referencia a este
+//non desaparecera porque esta en uso
+unset($v3);
+
+
+echo $v."<br/>";
+echo "<pre>";
+var_dump($v3);
+echo "</pre>";
+echo "<pre>";
+var_dump($v4);
+echo "</pre>";
