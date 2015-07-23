@@ -235,6 +235,8 @@ var_dump($_COOKIE);
 
 
 echo "<hr/>";
+echo "apartir de aqui estas non son globais non estan dispoñibles en todos os ambitos";
+echo "<hr/>";
 //esta variable almacena o mensaxe erro previo
 //é util condo usamos o @ para silenciar os erros e queremos saber o erro
 var_dump($php_errormsg);
