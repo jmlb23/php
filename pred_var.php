@@ -163,3 +163,97 @@ echo $_SERVER["PATH_INFO"]."<br/>";
 //a version sin procesar do PATH_INFO
 echo $_SERVER["ORIG_PATH_INFO"]."<br/>";
 
+
+echo "<hr/>";
+
+//para o metodo de http get en php os valores pasados por este metodo estan na variable global $_GET que é un array asociativo dos valores pasados no querystring
+//antes de php 4.1.0 a forma era con $HTTP_GET_VARS que non era global
+//e foi eliminado
+//recordar que é global e esta dimploñible en calquer ambito de funcion ou clase
+//ou namespace non fai falla facelo globalnin chamar o array globals
+//as variables do get son pasadas por urldecode
+var_dump($_GET);
+
+
+echo "<hr/>";
+
+//o igual que no metodo get de http temos unha variable superglobal para o post
+//temos o mesmo un array asociativo das variables pasadas polo metodo post
+
+//o igual que no get existia a variable HTTP_POST_VARS que xa desapareceu
+
+var_dump($_POST);
+
+echo "<hr/>";
+
+//para os arquvos subidos mediante post o servidor temos tamen unha variable superglobal que é un array asociativo cos elementos subidos no script actual
+//antes tamen existia a variable $HTTP_POST_FILES (explicacion en get e post)
+
+var_dump($_FILES);
+
+echo "<hr/>";
+
+//temos tamen unha variable superglobal que é un array asociativo do que conten a suma de $_POST $_GET $_COOKIE
+
+//afectalle desde php 5.3.0 a directiva do php.ini request_order
+//en php 4.3.0 o contido da variable $_FILES non aparece en $_REQUEST
+//foi introducida en php 4.1.0
+
+//no cli argv e argc so aparecen na variable $SERVER
+var_dump($_REQUEST);
+
+echo "<hr/>";
+
+//para as sessions en http temos o mesmo que get e en post
+//as variables de session gardanse nun array asociativo chamado $_SESSION
+//antes existia a variable non global $HTTP_SESSION_VARS
+//deprecada en php 4.1.0
+//podemos inciar unha session con session_start() ver a documentacion
+var_dump($_SESSION);
+
+
+echo "<hr/>";
+
+//conten as variables pasadas o script via o metodo de entorno
+//as varibles son importadas o espazo de nomes global
+//enumeralas non é posible xa que depende do entorno e do SO
+//habera que mirar as que estan definidas na mesma
+
+//o mesmo con HTTP_ENV_VARS
+
+
+
+var_dump($_ENV);
+
+echo "<hr/>";
+
+//para as cookies temos o mesmo que anterior
+//e antes estaba $HTTP_COOKIE_VARS
+//foi introducido na 4.1.0
+//podemos setear cookies con setcookie(); en formato chave valor
+var_dump($_COOKIE);
+
+
+echo "<hr/>";
+//esta variable almacena o mensaxe erro previo
+//é util condo usamos o @ para silenciar os erros e queremos saber o erro
+var_dump($php_errormsg);
+
+echo "<hr/>";
+//os datos do post sen procesar
+//esta obsoleta en php 5.6.0
+//en caso necesario é mellor usar o stream php://input
+//$HTTP_RAW_POST_DATA
+
+
+echo "<hr/>";
+
+//temos en php este array é parecido a funcion get_headers()
+//devolve o header da resposta do servidor
+
+var_dump($http_response_header);
+
+echo "<hr/>";
+//se no ini register_argc_argv esta desbilitado non estan dispoñibles
+// argc e argv ao estilo c reprensentan os argumentos pasados o script no que o 0 é o nome do mesmo e en argc sempre ten como minimo un xa que sempre existe o nome do script //e argv un array cos argumentos no que o 0 é sempre o nome do script
+
